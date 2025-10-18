@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises-Functions</title>
+</head>
+
+<body>
+    <script>
+
+        function greet(name) {
+            let greeting = `Hello ${name}`;
+            if (!name) {
+                greeting = `Hi there!`;
+            }
+
+            return console.log(greeting);
+        }
+
+        greet('Simon');
+        greet('Graciela');
+        greet();
+
+
+    </script>
+</body>
+
+</html>
