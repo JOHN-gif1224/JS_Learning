@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises-Functions</title>
+</head>
+
+<body>
+    <script>
+        function convertLength(length, from, to) {
+            let distance = "";
+
+            if (from === to) {
+                distance = length + ` ${to}`;
+            } else if (from === 'km' && to === 'miles') {
+                distance = length * 0.625 + ` ${to}`;
+            } else {
+                distance = length * 1.6 + ` ${to}`;
+            }
+
+            return console.log(distance);
+        }
+
+        convertLength(50, 'miles', 'km');
+        convertLength(32, 'km', 'miles');
+        convertLength(50, 'km', 'km');
+        convertLength(30, 'miles', 'km');
+        convertLength(872, 'km', 'miles');
+        convertLength(508, 'miles', 'km');
+    </script>
+</body>
+
+</html>
