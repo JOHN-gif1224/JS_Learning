@@ -24,6 +24,8 @@
         console.log(product);
 */
 
+
+        //Objet "produit"
         const product2 = {
             name: 'shirt',
             'delivery - time': '1 day',
@@ -38,16 +40,28 @@
             }
         };
 
+        // Affichage des différents éléments de l'objet
         console.log(product2.name);
         console.log(product2['name']);
         console.log(product2);
-        console.log(product2['delivery-time']);
+        console.log(product2['delivery - time']);
 
         console.log(product2.rating.count);
         product2.fun();
 
 
         console.log(typeof console.log);
+
+        // JSON: JavaScript Object permet de transférer des données 
+        // d'un ordinateur à un autre
+
+        // JSON.stringify permet de mettre les données en type: "string".
+        console.log(JSON.stringify(product2));
+
+        const jsonString = JSON.stringify(product2)
+
+        // JSON.parse permet de remettre en JS les données
+        console.log(JSON.parse(jsonString));
 
     </script>
 </body>
