@@ -25,44 +25,89 @@
 */
 
 
-        //Objet "produit"
-        const product2 = {
-            name: 'shirt',
-            'delivery - time': '1 day',
+        /*     //Objet "produit"
+             const product2 = {
+                 name: 'shirt',
+                 'delivery - time': '1 day',
+     
+                 rating: {
+                     stars: 4.5,
+                     count: 87
+                 },
+     
+                 fun: function function1() {
+                     console.log('functions inside objects')
+                 }
+             }; */
+        /*
+                // Affichage des différents éléments de l'objet
+                console.log(product2.name);
+                console.log(product2['name']);
+                console.log(product2);
+                console.log(product2['delivery - time']);
+        
+                console.log(product2.rating.count);
+                product2.fun();
+        
+        
+                console.log(typeof console.log);
+        
+                // JSON: JavaScript Object permet de transférer des données 
+                // d'un ordinateur à un autre
+        
+                // JSON.stringify permet de mettre les données en type: "string".
+                console.log(JSON.stringify(product2));
+        
+                const jsonString = JSON.stringify(product2)
+        
+                // JSON.parse permet de remettre en JS les données
+                console.log(JSON.parse(jsonString));
+                */
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
 
-            rating: {
-                stars: 4.5,
-                count: 87
-            },
+        const object1 = {
+            message: 'hello'
+        };
 
-            fun: function function1() {
-                console.log('functions inside objects')
+        const object2 = object1;
+        object1.message = 'Good morning !';
+        console.log(object1);
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good morning !'
+        };
+        console.log(object3 === object1); //value: false | Parce que la comparaison ici des objets, s'est faite 
+        // sur les références des objects et non sur leur valeurs
+
+        console.log(object2 === object1); // value: true | Ils ont la même référence
+
+        // Destructuring shortcut
+        const object4 = {
+            message: 'Good morning !',
+            price: 799
+        };
+
+        // const message = object4.message; 
+        const { message, price } = object4;
+        console.log(message);
+        console.log(price);
+
+        const object5 = {
+            //message: message | shorthand
+            message,
+            /*method: function function1() {
+             *   console.log('method');
+            }*/
+
+            method() {
+                console.log('method');
             }
         };
 
-        // Affichage des différents éléments de l'objet
-        console.log(product2.name);
-        console.log(product2['name']);
-        console.log(product2);
-        console.log(product2['delivery - time']);
-
-        console.log(product2.rating.count);
-        product2.fun();
-
-
-        console.log(typeof console.log);
-
-        // JSON: JavaScript Object permet de transférer des données 
-        // d'un ordinateur à un autre
-
-        // JSON.stringify permet de mettre les données en type: "string".
-        console.log(JSON.stringify(product2));
-
-        const jsonString = JSON.stringify(product2)
-
-        // JSON.parse permet de remettre en JS les données
-        console.log(JSON.parse(jsonString));
-
+        console.log(object5);// display: {message: 'Good morning !'}
+        object5.method();
     </script>
 </body>
 
