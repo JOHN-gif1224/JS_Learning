@@ -10,18 +10,51 @@
 <body>
 
     <p>Youtube subscribe Button</p>
-    <button onclick="
-    const buttonElement = document.querySelector('.js-subscribe-button');
-    
-    if(buttonElement.innerHTML === 'Subscribe') {
-        buttonElement.innerHTML = 'Subscribed'
-    } else {
-        buttonElement.innerHTML = 'Subscribe';
-    }
-    " class="js-subscribe-button">Subscribe</button>
+    <button onclick="subscribe();
+    " class="js-subscribe-btn">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <input placeholder="Cost of order" class="js-cost-input" type="number" onkeydown="handleCostKeydown(event);">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-total-cost"></p>
 
     <script>
+        String(25);
+        console.log('25' - 5);
+        console.log('25' + 5);
 
+        //window.document;
+        //window.console.log('Window');
+        //window.alert;
+        /*JavaScript permet d'éviter d'écrire tout le temps "window", parce que window
+        est le plus grand conteneur d'éléments HTML.*/
+
+        function handleCostKeydown(event) {
+            if (event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            let inputElement = document.querySelector('.js-cost-input');
+            let cost = Number(inputElement.value);
+
+            if (cost < 40) {
+                cost += 10;
+            }
+
+
+            document.querySelector('.js-total-cost').
+                textContent = `$${cost}`;
+        }
+        function subscribe() {
+            const getBtn = document.querySelector('.js-subscribe-btn');
+            if (getBtn.innerHTML === 'Subscribe') {
+                getBtn.innerHTML = 'Subscribed';
+            } else {
+                getBtn.innerHTML = 'Subscribe';
+            }
+        }
     </script>
 </body>
 
