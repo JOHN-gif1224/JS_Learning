@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.subscribe-button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+}
