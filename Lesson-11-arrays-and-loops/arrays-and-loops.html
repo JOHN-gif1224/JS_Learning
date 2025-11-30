@@ -18,6 +18,21 @@
         myArray[0] = 40;
         console.log(myArray);
 
+        [1, 'hello', true, { name: 'socks' }, [1, 2]];
+        console.log(typeof [1, 2]); // object : because arrays are another type of object.
+
+        console.log(Array.isArray([1, 2])); // True 
+
+        console.log(myArray.length); // number of values in "myArray";
+
+        myArray.push(100); // Add a value at the end of "myArray";
+        console.log(myArray);
+
+        myArray.splice(0, 1); // .splice() removes numbers inside arrays.
+        console.log(myArray); // The first number is the index, and the other one is the number of element we want to remove
+
+
+
     </script>
 </body>
 
