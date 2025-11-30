@@ -12,16 +12,21 @@
 
 const todoList = ["wash dishes", "cook rice"];
 
-let todoListHTML = "";
+renderTodoList();
 
-for (let i = 0; i < todoList.length; i++) {
-  const todo = todoList[i];
-  const html = `<p>${todo}</p>`;
+function renderTodoList() {
+  let todoListHTML = "";
 
-  todoListHTML += html;
+  for (let i = 0; i < todoList.length; i++) {
+    const todo = todoList[i];
+    const html = `<p>${todo}</p>`;
+
+    todoListHTML += html;
+  }
+
+  console.log(todoListHTML);
+  document.querySelector(".js-todo-list").innerHTML = todoListHTML;
 }
-
-console.log(todoListHTML);
 
 function addTodo() {
   let todoInput = document.querySelector(".todo-input");
@@ -32,4 +37,6 @@ function addTodo() {
 
   todoInput.value = "";
   console.log(todoList);
+
+  renderTodoList();
 }
