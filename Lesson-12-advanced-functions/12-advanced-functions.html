@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+
+<body>
+
+    <button onclick="" class="js-button">Click</button>
+
+    <script>
+
+        const btnElement = document.querySelector(".js-button");
+
+        const eventListener = () => {
+            console.log("click");
+        };
+        btnElement.addEventListener("click", eventListener);
+
+        btnElement.removeEventListener("click", eventListener);
+
+        btnElement.addEventListener("click", () => {
+            console.log("click 2");
+        });
+
+        /*
+        greeting();
+        function greeting() {
+            console.log("Hello !");
+        }
+
+        greeting();
+
+        const num = 2;
+        const function1 = function () { // Fonction anonyme, car elle n'a pas de nom
+            console.log("Hello2 !");
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        // On peut appeler la variable "function1" comme 
+        // une fonction :  "function1()"; parce que la variable contient une fonction
+        // greeting()
+        function1();
+
+        // Cet objet est appelé "Méthode"; car il contient une fonction
+        const object1 = {
+            num: 2,
+            fun: function () { // fonction "anonyme"
+                console.log("Hello3 !");
+            }
+        };
+
+        object1.fun();
+
+        // fonction avec paramètre
+        function display(params) {
+            console.log(params);
+        }
+        display(2);
+
+        // Passing a function into another function
+        function run(param) {
+            param();
+        }
+        run(function () {
+            console.log("Hello4 !");
+        }); */
+
+
+        /*Ce code est "asynchronours code (code asynchronisé)"*/
+        // setTimeout(function () {
+        /*setTimeout est une fonction qui permet d'exécuter une
+    action après un lapse de temps définit.
+    Contient 2 paramètres : action et temps en millisecondes*/
+        //    console.log("Timeout !");
+        // }, 10000);
+        //console.log("next line");
+
+
+        /*Fonction permettant d'exécuter une fonction ou une action 
+            à chaque intervalle de temps définit.
+            Contient 1.fonction ou action à exécuter
+                     2. intervalle de temps d'exécution
+        */
+        //  setInterval(function () {
+        //      console.log("Internal");
+        //  }, 20000);
+        //console.log("Next line 2 ");
+
+
+        [
+            "make dinner",
+            "play musique",
+            "Duolingo",
+            "Answer to mails"
+        ].forEach((value, index) => {// .forEach() permet de lire chaque index dans un tableau
+            console.log(index);
+            console.log(value);
+        })
+
+        /*Les fonctions régulières et les fonction fléchées sont pareils*/
+
+        const regularFunction = function (param, param2) {
+            console.log("Hello");
+            return 5;
+        }
+
+        regularFunction();
+
+        const arrowFunction = (param, param2) => {
+            console.log("hello");
+            return 5;
+        };
+        arrowFunction();
+
+        /*Shorter ways to write "arrow functions"*/
+        const oneParam = param => {
+            console.log(param + 1);
+        }
+        oneParam(2);
+
+        const oneLine = () => 2 + 3;
+        console.log(oneLine());
+
+        const object1 = {
+            /**
+             * another way to write an arrow function
+             */
+            test() {
+                
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
