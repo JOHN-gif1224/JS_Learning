@@ -32,8 +32,14 @@ const products = [
   },
 ];
 
-products.forEach((products) => {
-  const html = ` 
+/* avec la variable "productsHTML", on arrive à itérer les produits en fonction
+  des données déjà déclaré plus haut. Encore une fois la méthode ".forEach()" permet de créer une nouvelle
+  classe qui contient toutes les données. Optimisé avec la génération du HTML */
+
+let productsHTML = ""; // Accumulator pattern
+
+products.forEach((products) => { 
+  productsHTML += ` 
         <div class="product-container">
             <div class="product-image-container">
                 <img class="product-image"
@@ -53,7 +59,7 @@ products.forEach((products) => {
             </div>
 
             <div class="product-price">
-                ${products.priceCents / 100}
+                ${(products.priceCents / 100).toFixed(2)/* La méthode ".toFixed" uniquement pour les nombres, permet d'ajouter un certain nombre de chiffres désirés après une décimale *//} 
             </div>
 
             <div class="product-quantity-container">
@@ -83,6 +89,9 @@ products.forEach((products) => {
             </button>
             </div>
         `;
-
-        console.log(html);
 });
+
+console.log(productsHTML);
+
+// Génération des cartes pour chaque produit avec JS
+document.querySelector(".js-products-grid").innerHTML = productsHTML;
