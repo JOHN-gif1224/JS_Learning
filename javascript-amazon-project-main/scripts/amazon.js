@@ -1,44 +1,12 @@
 /*Data structure for listing products*/
 
-const products = [
-  {
-    image: "images/products/athletic-cotton-socks-6-pairs.jpg",
-    name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
-    rating: {
-      stars: 4.5,
-      count: 87,
-    },
-    priceCents: 1090,
-  },
-
-  {
-    image: "images/products/intermediate-composite-basketball.jpg",
-    name: "Intermediate Size Basketball",
-    rating: {
-      stars: 4,
-      count: 127,
-    },
-    priceCents: 2095,
-  },
-
-  {
-    image: "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
-    name: "Adults Plain Cotton T-Shirt - 2 Pack",
-    rating: {
-      stars: 4.5,
-      count: 56,
-    },
-    priceCents: 799,
-  },
-];
-
-/* avec la variable "productsHTML", on arrive à itérer les produits en fonction
+ /* avec la variable "productsHTML", on arrive à itérer les produits en fonction
   des données déjà déclaré plus haut. Encore une fois la méthode ".forEach()" permet de créer une nouvelle
   classe qui contient toutes les données. Optimisé avec la génération du HTML */
 
 let productsHTML = ""; // Accumulator pattern
 
-products.forEach((products) => { 
+products.forEach((products) => {
   productsHTML += ` 
         <div class="product-container">
             <div class="product-image-container">
@@ -59,7 +27,7 @@ products.forEach((products) => {
             </div>
 
             <div class="product-price">
-                ${(products.priceCents / 100).toFixed(2)/* La méthode ".toFixed" uniquement pour les nombres, permet d'ajouter un certain nombre de chiffres désirés après une décimale *//} 
+                ${(products.priceCents / 100).toFixed(2) /* La méthode ".toFixed" uniquement pour les nombres, permet d'ajouter un certain nombre de chiffres désirés après une décimale */}
             </div>
 
             <div class="product-quantity-container">
