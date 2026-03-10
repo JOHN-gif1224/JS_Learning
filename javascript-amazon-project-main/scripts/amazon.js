@@ -1,6 +1,11 @@
+/* Main idea of js */
+/* 1. save data
+  2. generate HTML
+  3. make it iteractive */
+
 /*Data structure for listing products*/
 
- /* avec la variable "productsHTML", on arrive à itérer les produits en fonction
+/* avec la variable "productsHTML", on arrive à itérer les produits en fonction
   des données déjà déclaré plus haut. Encore une fois la méthode ".forEach()" permet de créer une nouvelle
   classe qui contient toutes les données. Optimisé avec la génération du HTML */
 
@@ -52,14 +57,51 @@ products.forEach((products) => {
                 Added
             </div>
 
-            <button class="add-to-cart-button button-primary">
+            <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id = "${products.id /* "data-product-name" est un "Data Attribute" il est spécifique à HTML | Il doit toujours commencer par "data-" et le nom que l'on veut donner à notre élément avec du "kebab-case" comme convention de nomination*/}">
                 Add to Cart
             </button>
             </div>
         `;
 });
 
-console.log(productsHTML);
-
 // Génération des cartes pour chaque produit avec JS
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
+
+// Lorsqu'on clique sur le btn on ajoute la carte le contenant à une liste "cart[]"
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  button.addEventListener("click", () => {
+
+    const productId = button.dataset.productId; // La méthode ".dataset" permet prendre des infos provenant du data attribute d'un élément HTML
+
+    /*On augmente ici, la qte d'un produit quand il est déjà ajouté(cliqué)*/
+    // 1. on vérifie que la carte existe déjà
+
+        let matchingItem;
+
+     cart.forEach((item) => {
+      if(productId === item.productId) {
+        matchingItem = item;
+      }
+    });
+
+    // 2. si la carte existe déjà, on incrémente la qte
+
+    if(matchingItem) {
+      matchingItem.quantity += 1;
+    } else {     // 3. si la carte n'existe pas, on l'ajoute à la liste des cartes
+      cart.push(
+      {
+        productId: productId,
+        quantity: 1
+      }
+    )
+    }
+
+    /* Il pourrait y avoir des produit avec des prix ou notation différentes et pourtant ayant même nom
+        pour résoudre ce problème, on donne à chaque produit une identité unique : "id" */
+
+
+    console.log(cart);
+
+  });
+});
