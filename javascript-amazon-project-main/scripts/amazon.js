@@ -70,38 +70,46 @@ document.querySelector(".js-products-grid").innerHTML = productsHTML;
 // Lorsqu'on clique sur le btn on ajoute la carte le contenant à une liste "cart[]"
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
-
     const productId = button.dataset.productId; // La méthode ".dataset" permet prendre des infos provenant du data attribute d'un élément HTML
 
     /*On augmente ici, la qte d'un produit quand il est déjà ajouté(cliqué)*/
     // 1. on vérifie que la carte existe déjà
 
-        let matchingItem;
+    let matchingItem;
 
-     cart.forEach((item) => {
-      if(productId === item.productId) {
+    cart.forEach((item) => {
+      if (productId === item.productId) {
         matchingItem = item;
       }
     });
 
     // 2. si la carte existe déjà, on incrémente la qte
 
-    if(matchingItem) {
+    if (matchingItem) {
       matchingItem.quantity += 1;
-    } else {     // 3. si la carte n'existe pas, on l'ajoute à la liste des cartes
-      cart.push(
-      {
+    } else {
+      // 3. si la carte n'existe pas, on l'ajoute à la liste ou de la table des cartes
+      cart.push({
         productId: productId,
-        quantity: 1
-      }
-    )
+        quantity: 1,
+      });
     }
 
     /* Il pourrait y avoir des produit avec des prix ou notation différentes et pourtant ayant même nom
         pour résoudre ce problème, on donne à chaque produit une identité unique : "id" */
 
 
-    console.log(cart);
+    /* Quantité total des produit séléctionnés */
 
+    let cartQuantity = 0;
+
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+
+    console.log(cartQuantity);
+    console.log(cart);
   });
 });
