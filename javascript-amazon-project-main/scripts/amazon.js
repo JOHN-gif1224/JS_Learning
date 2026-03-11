@@ -1,3 +1,5 @@
+import { cart } from "../data/cart.js";
+
 /* Main idea of js */
 /* 1. save data
   2. generate HTML
